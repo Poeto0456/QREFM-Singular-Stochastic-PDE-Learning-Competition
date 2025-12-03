@@ -67,7 +67,7 @@ To generate the official `pred.mat` file:
 ## Key Features
 
 ### DLR Encode
-Extracts paracontrolled features capable of handling spatial singularities.
+Extracts features capable of handling singularities.
 
 ### Latent Neural Spectral Solver
 A stable pseudo-spectral integration scheme separating **Drift F** and **Diffusion G**.
