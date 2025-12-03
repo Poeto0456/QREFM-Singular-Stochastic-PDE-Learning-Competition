@@ -9,7 +9,7 @@ The model combines:
 - **Explicit Neural Spectral Solver** — stable drift–diffusion evolution
 - **Statistical loss functions** — Log-Spectral + Differentiable ACF ensuring correct temporal memory and roughness
 
-For full mathematical derivations and experiments, see the Technical Report.
+For full mathematical derivations and experiments, see the [Technical Report](link-to-report).
 
 ---
 
@@ -25,12 +25,12 @@ Competition_Singular_SPDE_learning/
 │   ├── diffeq_solver.py                 # Explicit neural spectral solver
 │   ├── dlr_encoder.py                   # Physics-informed encoder
 │   ├── fusion_model.py                  # Full architecture
-│   ├── utilities_NSPDE_specacf.py       # [Advanced] Composite Loss (L2 + Spectral + ACF)
-│   └── utilities_NSPDE.py               # [Default] Standard Loss (Used for Best Submission)
+│   ├── utilities_NSPDE_specaf.py        # Spectral + ACF losses
+│   └── utilities_NSPDE.py               # Standard loss
 ├── inference.ipynb                      # Reproduce submission (pred.mat)
 ├── train.ipynb                          # Train model from scratch
 ├── requirements.txt                     # Dependencies
-└── README.md
+└── README.md                            # This file
 ```
 
 ---
@@ -38,6 +38,8 @@ Competition_Singular_SPDE_learning/
 ## Quick Start
 
 ### 1. Installation
+
+Requires **Python 3.8+**
 
 ```bash
 pip install -r requirements.txt
@@ -77,13 +79,6 @@ Composite objective:
 - **L2 trajectory loss**
 - **Log-spectral loss** (Fourier-domain consistency)
 - **Differentiable ACF loss** (temporal autocorrelation preservation)
-  
-### Note on Loss Functions:
-The file utilities_NSPDE.py implements the standard loss used for our final Submission ID 1133, with pretrained weight included Spectral loss. We strictly include utilities_NSPDE_specacf.py as an advanced implementation (L2 + Spectral + ACF) referenced in our Technical Report.
----
 
-## Contact
-
-For questions or collaboration:
-
-**leduyanh1407@gmail.com**
+**Note on Loss Functions:**  
+The file `utilities_NSPDE.py` implements the standard loss used for our final Submission ID 1133, with pretrained weight included Spectral loss. We strictly include `utilities_NSPDE_specacf.py` as an advanced implementation (L2 + Spectral + ACF) referenced in our Technical Report.
