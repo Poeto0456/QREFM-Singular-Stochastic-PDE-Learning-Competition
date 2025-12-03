@@ -66,15 +66,15 @@ To generate the official `pred.mat` file:
 
 ## Key Features
 
-### Physics-Aware Encoding
-**DLR Encoder** extracts paracontrolled features capable of handling spatial singularities.
+### DLR Encode
+Extracts paracontrolled features capable of handling spatial singularities.
 
 ### Latent Neural Spectral Solver
 A stable pseudo-spectral integration scheme separating **Drift F** and **Diffusion G**.
 
-### Statistical Consistency Loss
+### Composite Loss
 Composite objective:
-- **L2 trajectory loss**
+- **L2 loss**
 - **Log-spectral loss** 
 - **Differentiable ACF loss** 
 
