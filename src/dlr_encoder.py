@@ -5,7 +5,7 @@ from operator import itemgetter
 
 def get_phi4_graph():
     """
-    'Thick' Graph: Focuses on the interaction between u0 and xi.
+    Graph: Focuses on the interaction between u0 and xi.
     Everything revolves around how u0 transforms under the impact of noise and nonlinearity.
     """
     graph = {
@@ -324,4 +324,5 @@ class LearnableDLREncoder(nn.Module):
         out_xi = torch.cat([xi_F1, xi_F2], dim=-1) # Output for network G
         
         # Return 2 separate tensors
+
         return out_u0, out_xi
