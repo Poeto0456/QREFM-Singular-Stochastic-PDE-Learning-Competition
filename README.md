@@ -2,14 +2,14 @@
 
 ## Overview
 
-This repository contains **Fusion NSPDE**, a hybrid architecture for learning singular stochastic dynamics, specifically the **Φ⁴₂ equation**.
+This repository contains **Fusion NSPDE**, a hybrid architecture for learning singular stochastic dynamics.
 
 The model combines:
 - **DLR Encoder** — physics-aware feature extraction inspired by Regularity Structures
-- **Explicit Neural Spectral Solver** — stable drift–diffusion evolution
-- **Statistical loss functions** — Log-Spectral + Differentiable ACF ensuring correct temporal memory and roughness
+- **Latent Neural Spectral Solver** — stable drift–diffusion evolution
+- **Composite loss functions** — Log-Spectral + Differentiable ACF ensuring correct temporal memory and roughness
 
-For full mathematical derivations and experiments, see the [Technical Report](link-to-report).
+For full mathematical derivations and experiments, see the Technical Report.
 
 ---
 
@@ -39,8 +39,6 @@ Competition_Singular_SPDE_learning/
 
 ### 1. Installation
 
-Requires **Python 3.8+**
-
 ```bash
 pip install -r requirements.txt
 ```
@@ -69,16 +67,16 @@ To generate the official `pred.mat` file:
 ## Key Features
 
 ### Physics-Aware Encoding
-**DLR Encoder** extracts paracontrolled features capable of handling spatial singularities in Φ⁴₂.
+**DLR Encoder** extracts paracontrolled features capable of handling spatial singularities.
 
-### Explicit Spectral Solver
-A stable pseudo-spectral integration scheme separating **Drift F** and **Diffusion G** to respect the Itô SPDE structure.
+### Latent Neural Spectral Solver
+A stable pseudo-spectral integration scheme separating **Drift F** and **Diffusion G**.
 
 ### Statistical Consistency Loss
 Composite objective:
 - **L2 trajectory loss**
-- **Log-spectral loss** (Fourier-domain consistency)
-- **Differentiable ACF loss** (temporal autocorrelation preservation)
+- **Log-spectral loss** 
+- **Differentiable ACF loss** 
 
 **Note on Loss Functions:**  
 The file `utilities_NSPDE.py` implements the standard loss used for our final Submission ID 1133, with pretrained weight included Spectral loss. We strictly include `utilities_NSPDE_specacf.py` as an advanced implementation (L2 + Spectral + ACF) referenced in our Technical Report.
