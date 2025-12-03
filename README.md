@@ -2,11 +2,11 @@
 
 ## Overview
 
-This repository contains **Fusion NSPDE**, a hybrid architecture for learning singular stochastic dynamics.
+This repository contains a hybrid architecture for learning singular stochastic dynamics.
 
 The model combines:
-- **DLR Encoder** — physics-aware feature extraction inspired by Regularity Structures
-- **Latent Neural Spectral Solver** — stable drift–diffusion evolution
+- **DLR Encoder** — feature extraction inspired by Regularity Structures
+- **Neural SPDE Solver** — stable drift–diffusion evolution
 - **Composite loss functions** — Log-Spectral + Differentiable ACF ensuring correct temporal memory and roughness
 
 For full mathematical derivations and experiments, see the Technical Report.
@@ -66,10 +66,10 @@ To generate the official `pred.mat` file:
 
 ## Key Features
 
-### DLR Encode
+### DLR Encoder
 Extracts features capable of handling singularities.
 
-### Latent Neural Spectral Solver
+### Neural SPDE Solver
 A stable pseudo-spectral integration scheme separating **Drift F** and **Diffusion G**.
 
 ### Composite Loss
