@@ -18,18 +18,19 @@ For full mathematical derivations and experiments, see the Technical Report.
 ```
 Competition_Singular_SPDE_learning/
 ├── configs/
-│   └── example.yaml                    # Configuration files
+│   └── example.yaml                     # Configuration files
 ├── evaluation/                          # Metric utilities
 ├── src/
-│   ├── best_fusion_model_trained.pth   # Pretrained weights
-│   ├── diffeq_solver.py                # Explicit neural spectral solver
-│   ├── dlr_encoder.py                  # Physics-informed encoder
-│   ├── fusion_model.py                 # Full architecture
-│   └── utilities_NSPDE.py              # Spectral + ACF losses
+│   ├── best_fusion_model_trained.pth    # Pretrained weights
+│   ├── diffeq_solver.py                 # Explicit neural spectral solver
+│   ├── dlr_encoder.py                   # Physics-informed encoder
+│   ├── fusion_model.py                  # Full architecture
+│   ├── utilities_NSPDE_specacf.py       # [Advanced] Composite Loss (L2 + Spectral + ACF)
+│   └── utilities_NSPDE.py               # [Default] Standard Loss (Used for Best Submission)
 ├── inference.ipynb                      # Reproduce submission (pred.mat)
 ├── train.ipynb                          # Train model from scratch
 ├── requirements.txt                     # Dependencies
-└── README.md                            # This file
+└── README.md
 ```
 
 ---
@@ -76,9 +77,9 @@ Composite objective:
 - **L2 trajectory loss**
 - **Log-spectral loss** (Fourier-domain consistency)
 - **Differentiable ACF loss** (temporal autocorrelation preservation)
-
-This enforces correct roughness, long-range memory, and stationary behavior.
-
+- 
+Note on Loss Functions: The file utilities_NSPDE.py implements the standard loss used for our final Submission ID 1133, with pretrained weight included Spectral loss.
+We strictly include utilities_NSPDE_specacf.py as an advanced implementation (L2 + Spectral + ACF) referenced in our Technical Report.
 ---
 
 ## Contact
