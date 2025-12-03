@@ -79,7 +79,7 @@ Composite objective:
 - **Differentiable ACF loss** (temporal autocorrelation preservation)
 - 
 ### Note on Loss Functions: 
-The file utilities_NSPDE.py implements the standard loss used for our final Submission ID 1133, with pretrained weight included Spectral loss.
+The file utilities_NSPDE.py implements the standard loss used for our final Submission ID 1133, with pretrained weight included Spectral loss. 
 We strictly include utilities_NSPDE_specacf.py as an advanced implementation (L2 + Spectral + ACF) referenced in our Technical Report.
 ---
 
